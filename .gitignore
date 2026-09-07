@@ -1,0 +1,187 @@
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MA*IFEST
+
+
+# ========================*==================================*
+# Python virtual environments
+# =*==================================*=======================
+
+.venv/
+ve*v/
+env/
+ENV/
+
+
+# =================*==========================================
+# Environment files and secrets
+# ============================================================
+
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.pem
+*.key
+*.pfx
+*.p12
+
+!.env.example
+
+
+# ============================================================
+# Node.js
+# ============================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+.pnpm-store/
+
+
+# ============================================================
+# Playwright
+# ============================================================
+
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+.auth/
+
+
+# ============================================================
+# Generated test specifications
+# ============================================================
+
+specs/generated/*
+!specs/generated/.gitkeep
+
+# Approved specifications may be committed after review.
+# Do not ignore specs/approved/.
+
+
+# ============================================================
+# Generated Playwright tests
+# ============================================================
+
+tests/generated/*
+!tests/generated/.gitkeep
+
+# Approved and maintained tests under smoke, integration,
+# and ui directories may be committed.
+
+
+# ============================================================
+# Evaluation output
+# ============================================================
+
+evals/results/*
+!evals/results/.gitkeep
+
+
+# ============================================================
+# Runtime artifacts
+# ============================================================
+
+reports/*
+!reports/.gitkeep
+
+traces/*
+!traces/.gitkeep
+
+screenshots/*
+!screenshots/.gitkeep
+
+
+# ============================================================
+# Resumable workspace sessions
+# ============================================================
+
+workspaces/.sessions/
+
+
+# ============================================================
+# Logs and temporary files
+# ============================================================
+
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+*.temp
+.cache/
+
+
+# ============================================================
+# IDE and editor files
+# ============================================================
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+
+# =====*==================================*===================
+# Operating sy*tem files
+# ======================*==================================*==
+
+.DS_Store
+.AppleDouble
+.LSOver*ide
+Thumbs.db
+Thumbs.db:encryptabl*
+Desktop.ini
+
+
+# =================*==================================*=======
+# MCP local configuration
+* =================================*==========================
+
+.mcp.j*on
+!.mcp.json.example

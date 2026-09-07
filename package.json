@@ -1,0 +1,40 @@
+{
+  "name": "testing-and-eval-agent-maf",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Playwright execution layer for the Microsoft Agent Framework Testing and Evaluation Agent.",
+  "type": "module",
+  "scripts": {
+    "playwright:install": "playwright install chromium",
+    "test": "playwright test tests/smoke tests/integration tests/ui",
+    "test:smoke": "playwright test tests/smoke",
+    "test:integration": "playwright test tests/integration",
+    "test:ui": "playwright test tests/ui",
+    "test:generated": "node -e \"console.error('Generated tests require human approval before execution.'); process.exit(1)\"",
+    "test:headed": "playwright test tests/smoke tests/integration tests/ui --headed",
+    "test:debug": "playwright test tests/smoke tests/integration tests/ui --debug",
+    "test:ui-mode": "playwright test tests/smoke tests/integration tests/ui --ui",
+    "test:list": "playwright test tests/smoke tests/integration tests/ui --list",
+    "report:show": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run test:list"
+  },
+  "keywords": [
+    "microsoft-agent-framework",
+    "microsoft-foundry",
+    "playwright",
+    "playwright-mcp",
+    "testing",
+    "evaluation"
+  ],
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@types/node": "^24.0.0",
+    "dotenv": "^17.0.0",
+    "typescript": "^5.9.0"
+  }
+}

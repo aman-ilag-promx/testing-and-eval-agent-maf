@@ -1,0 +1,9 @@
+{
+  "approval_id": "3a3e7b8f-af92-4680-8ad3-235754951b09",
+  "artifact_id": "e9e114a4-9b0b-429a-a15d-fc8dbe3d67de",
+  "status": "approved",
+  "reviewer": "cli-user",
+  "comments": "Approved interactively via CLI",
+  "requested_at": "2026-09-01T08:06:09.458631Z",
+  "decided_at": "2026-09-01T08:06:09.458631Z"
+}
