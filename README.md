@@ -16,6 +16,34 @@ Current status: conversational testing pipeline implemented. GitHub MCP evidence
 
 The agent accepts natural-language test requests through the CLI, uses the configured Microsoft Foundry model to collect missing details, generates traceable test artifacts, and preserves mandatory human approval before execution.
 
+## Local Configuration
+
+Create a local `.env` file from the tracked template before running the agent. Do not commit `.env`; it is ignored by Git. Keep `MAF_PROJECT_ENDPOINT`, `MAF_MODEL_NAME`, `MAF_MODEL_API_KEY`, and `GITHUB_MCP_TOKEN` blank in `.env.example`.
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Complete these `.env` fields for live Foundry model generation:
+
+- `MAF_PROJECT_ENDPOINT`: Your Microsoft Foundry project endpoint.
+- `MAF_MODEL_NAME`: The deployment name in that Foundry project.
+- `MAF_AUTH_MODE`: Set to `azure_cli` or `api_key`.
+- `MAF_MODEL_API_KEY`: Required only when `MAF_AUTH_MODE=api_key`; leave it blank when using `azure_cli`.
+
+For `azure_cli` authentication, sign in before starting the agent:
+
+```powershell
+az login
+```
+
+Optional integrations require their corresponding fields only when enabled:
+
+- GitHub MCP: set `GITHUB_MCP_ENABLED=true` and provide `GITHUB_MCP_TOKEN`. Keep `GITHUB_MCP_URL` at the template's read-only hosted endpoint. Set `GITHUB_MCP_ALLOW_PRIVATE_REPOSITORIES=true` only when private repository observations are needed.
+- Playwright MCP: set `PLAYWRIGHT_MCP_ENABLED=true`; the provided `PLAYWRIGHT_MCP_COMMAND` and `PLAYWRIGHT_MCP_ARGS` defaults run the official server through `npx`. Set `PLAYWRIGHT_MCP_URL` only when using a managed MCP endpoint instead.
+- Azure DevOps MCP: not supported in the current version. Leave `ADO_MCP_ENABLED=false` and `ADO_MCP_URL` blank.
+- Live browser execution: set `TARGET_BASE_URL` to an approved non-production URL and set `ALLOW_LIVE_TEST_EXECUTION=true`. Leave `ALLOW_DESTRUCTIVE_TESTS=false` unless explicitly authorized.
+
 ## Quick Start
 
 ```powershell
